@@ -42,4 +42,4 @@ $ npm run test:cov
 
 ## POSTMAN Collection
 
-[https://documenter.getpostman.com/view/21892093/Uzrx68Ce] (https://documenter.getpostman.com/view/21892093/Uzrx68Ce)
+https://documenter.getpostman.com/view/21892093/Uzrx68Ce
