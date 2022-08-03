@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as winston from 'winston';
 import * as expressWinston from 'express-winston';
+import { AllExceptionsFilter } from 'src/filters/all-exception.filter';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
 
@@ -23,6 +25,8 @@ async function bootstrap() {
   });
 
   app = await NestFactory.create(AppModule);
+  const configService = app.get(ConfigService);
+  const port = configService.get('PORT');
 
   app.use(expressWinston.logger({
     format: logFormat,
@@ -36,8 +40,10 @@ async function bootstrap() {
     ]
   }));
 
-  await app.listen(3000).then(() => {
-    console.log(`🚀 Server ready at 3000`);
+  app.useGlobalFilters(new AllExceptionsFilter());
+
+  await app.listen(port).then(() => {
+    console.log(`🚀 Server ready at ${port}`);
   });
 }
 bootstrap();

@@ -10,6 +10,10 @@ Simple [Nest](https://github.com/nestjs/nest) Application that takes latitude an
 $ npm install
 ```
 
+## ENV
+
+Rename .env_demo to .env
+
 ## Running the app
 
 ```bash
@@ -35,3 +39,7 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## POSTMAN Collection
+
+[https://documenter.getpostman.com/view/21892093/Uzrx68Ce] (https://documenter.getpostman.com/view/21892093/Uzrx68Ce)
